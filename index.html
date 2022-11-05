@@ -184,8 +184,8 @@
 
     <div class="player__conteiner">
       <div class="player__track-info track-info">
-        <p class="track-info__title"></p>
-        <p class="track-info__artist"></p>
+        <p class="track-info__title">Follow you</p>
+        <p class="track-info__artist">Imagine Dragons</p>
       </div>
 
       <div class="player__controller">
@@ -193,27 +193,29 @@
         <button class="player-icon player-icon_prev"></button>
         <button class="player-icon player-icon_pause"></button>
         <button class="player-icon player-icon_next"></button>
-        <button class="player-icon player-icon_like"></button>
+        <button class="player-icon player-icon_like-o"></button>
       </div>
 
-      <div class="player__progress-wrap"></div>
-      <div class="player__progress">
-        <input type="range" class="player__progress-input" min="0" max="100" value="0">
-      </div>
+      <div class="player__progress-wrap">
+        <div class="player__progress">
+          <input type="range" class="player__progress-input" min="0" max="100" value="0">
+        </div>
 
-      <p class="player__time">
-        <span class="player__time-passed">0:24</span>
-        <span>/</span>
-        <span class="player__time-total">4:31</span>
-      </p>
+        <p class="player__time">
+          <span class="player__time-passed">0:24</span>
+          <span>/</span>
+          <span class="player__time-total">4:31</span>
+        </p>
+      </div>
 
       <div class="player__volume-wrap">
         <div class="player__volume">
           <input class="player__volume-input" type="range" min="0" max="100" value="100">
         </div>
-      </div>
-      <button class="player__icon_mute"></button>
 
+        <button class="player-icon player__icon_mute-on"></button>
+
+      </div>
     </div>
   </section>
 </body>
