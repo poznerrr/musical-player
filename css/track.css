@@ -71,3 +71,16 @@
   border-radius: 0px 0px 12px 12px;
   padding: 14px 8px;
 }
+
+@media (max-width: 560px) {
+
+  .track {
+    padding: 3px;
+    border-width: 1px;
+    border-radius: 14px;
+  }
+
+  .track__info {
+    padding: 8px;
+  }
+}
