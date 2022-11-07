@@ -31,7 +31,7 @@
   align-items: center;
 }
 
-.player-icon {
+.player__icon {
   display: block;
   width: 24px;
   height: 24px;
@@ -39,27 +39,27 @@
   background-repeat: no-repeat;
 }
 
-.player-icon_stop {
+.player__icon_stop {
   background-image: url(../img/stop.png);
 }
 
-.player-icon_prev {
+.player__icon_prev {
   background-image: url(../img/prev.png);
 }
 
-.player-icon_pause {
+.player__icon_pause {
   background-image: url(../img/pause.png);
 }
 
-.player-icon_play {
+.player__icon_play {
   background-image: url(../img/play.png);
 }
 
-.player-icon_next {
+.player__icon_next {
   background-image: url(../img/next.png);
 }
 
-.player-icon_like-o {
+.player__icon_like-o {
   background-image: url(../img/like-o.png);
 }
 
