@@ -93,26 +93,50 @@ const catalogConteiner = document.querySelector('.catalog__container')
 const pauseBtn = document.querySelector('.player__controller_pause');
 const stopBtn = document.querySelector('.player__controller_stop');
 
+const pausePlayer = () => {
+  const trackActive = document.querySelector('.track_active');
+  if (audio.paused) {
+    audio.play();
+    pauseBtn.classList.remove('player__icon_play');
+    trackActive.classList.remove('track_pause');
+  } else {
+    audio.pause();
+    pauseBtn.classList.add('player__icon_play');
+    trackActive.classList.add('track_pause');
+  }
+}
+
 const playMusic = (event) => {
   event.preventDefault();
   const trackActive = event.currentTarget;
-  const id = trackActive.dataset.idTrack;
-  const track = dataMusic.find(item => id === item.id);
-  audio.src = track.mp3;
-  audio.play();
-  pauseBtn.classList.remove('player__icon_play');
-  player.classList.add('player_active');
 
-  for (let i = 0; i < tracksCard.length; i++) {
-    tracksCard[i].classList.remove('track_active')
+  if (trackActive.classList.contains('track_active')) {
+    pausePlayer();
+  } else {
+    const id = trackActive.dataset.idTrack;
+    const track = dataMusic.find(item => id === item.id);
+    audio.src = track.mp3;
+
+
+    audio.play();
+    pauseBtn.classList.remove('player__icon_play');
+    player.classList.add('player_active');
+
+    for (let i = 0; i < tracksCard.length; i++) {
+      tracksCard[i].classList.remove('track_active');
+      tracksCard[i].classList.remove('track_pause');
+    }
+    trackActive.classList.add('track_active');
   }
-
-  trackActive.classList.add('track_active');
 }
 
 const stopMusic = (event) => {
   audio.src = null;
   player.classList.remove('player_active');
+  for (let i = 0; i < tracksCard.length; i++) {
+    tracksCard[i].classList.remove('track_active');
+    tracksCard[i].classList.remove('track_pause');
+  }
 }
 
 const addHandlerTrack = () => {
@@ -123,15 +147,7 @@ const addHandlerTrack = () => {
 
 
 
-pauseBtn.addEventListener('click', () => {
-  if (audio.paused) {
-    audio.play();
-    pauseBtn.classList.remove('player__icon_play');
-  } else {
-    audio.pause();
-    pauseBtn.classList.add('player__icon_play');
-  }
-})
+pauseBtn.addEventListener('click', pausePlayer);
 
 stopBtn.addEventListener('click', stopMusic);
 

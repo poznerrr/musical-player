@@ -59,6 +59,13 @@
   transition-property: background-color;
 }
 
+.track_pause .track__img-wrap::after {
+  transform: translate(-50%, -50%) rotateY(0);
+  background-image: url(../img/play.png);
+  transition-property: background-color;
+}
+
+
 .track_active .track__img-wrap::after {
   background-color: #fff;
 }
