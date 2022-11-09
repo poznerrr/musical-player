@@ -59,8 +59,12 @@
   background-image: url(../img/next.png);
 }
 
-.player__icon_like-o {
+.player__icon_like {
   background-image: url(../img/like-o.png);
+}
+
+.player__icon_like_active {
+  filter: drop-shadow(0 0 2px tomato);
 }
 
 .player__progress-wrap {
